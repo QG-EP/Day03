@@ -11,7 +11,7 @@
 
 void my_putchar(char c);
 
-int my_print_alpha(void)
+int my_print_revalpha(void)
 {
     for (int x = 122; x >= 97; x--)
         my_putchar(x);
