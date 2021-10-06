@@ -5,7 +5,7 @@
 ** tests_my_put_nbr
 */
 
-my_put_nbr(int nb);
+int my_put_nbr(int nb);
 
 int main()
 {
