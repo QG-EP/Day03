@@ -14,7 +14,7 @@ void my_putchar(char c)
     write(1, &c, 1);
 }
 
-int print(int x)
+void print(int x)
 {
     char str;
     char str1;
@@ -23,7 +23,6 @@ int print(int x)
     str1 = (x % 10) + 48;
     my_putchar(str);
     my_putchar(str1);
-    return (0);
 }
 
 int my_print_comb2(void)
@@ -45,4 +44,5 @@ int my_print_comb2(void)
         }
         a = a + 1;
     }
+    return (0);
 }
