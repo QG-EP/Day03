@@ -5,6 +5,8 @@
 ** my_print_comb2
 */
 
+void my_putchar(char c);
+
 int print(int x)
 {
     char str;

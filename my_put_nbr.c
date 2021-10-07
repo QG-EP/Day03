@@ -7,6 +7,8 @@
 
 #include <unistd.h>
 
+void my_putchar(char c);
+
 int my_put_nbr(int nb)
 {
     if (nb == -2147483648) {
