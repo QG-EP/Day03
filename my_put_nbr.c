@@ -13,9 +13,8 @@ int my_put_nbr(int nbr)
         nbr = -nbr;
         my_putchar('-');
     }
-    if (nbr > 9) {
+    if (nbr > 9)
         my_put_nbr(nbr / 10);
-    }
     x = nbr % 10 + 48;
     my_putchar(x);
     return (0);
