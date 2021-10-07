@@ -5,17 +5,25 @@
 ** my_put_nbr
 */
 
-int my_put_nbr(int nbr)
-{
-    int x;
+#include <unistd.h>
 
-    if (nbr < 0) {
-        nbr = -nbr;
-        my_putchar('-');
+int my_put_nbr(int nb)
+{
+    if (nb == -2147483648) {
+        write(1, "-2147483648", 11);
+        return (0);
     }
-    if (nbr > 9)
-        my_put_nbr(nbr / 10);
-    x = nbr % 10 + 48;
-    my_putchar(x);
+    if (nb < 0) {
+        my_putchar('-');
+        nb = nb * -1;
+        if (nb == 214783648) {
+            nb = nb - 1;
+        }
+    }
+    if (nb >= 10) {
+        my_put_nbr(nb / 10);
+        my_putchar(nb % 10 + '0');
+    } else
+        my_putchar(nb + '0');
     return (0);
 }
