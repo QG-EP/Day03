@@ -7,18 +7,23 @@
 
 void my_putchar(char c);
 
-int my_put_nbr(int nb)
+void calc(int nbr)
 {
-    if (nb < 0) {
-        my_putchar('-');
-        nb = nb * -1;
-        if (nb == 214783648)
-            nb = nb - 1;
+    if (nbr >= 10)
+        calc(nbr / 10);
+    if (nbr > 0)
+        my_putchar((nbr % 10) + 48);
+}
+
+void my_put_nbr(int nbr)
+{
+    if (nbr == 0) {
+        my_putchar('0');
+        return;
     }
-    if (nb >= 10) {
-        my_put_nbr(nb / 10);
-        my_putchar(nb % 10 + '0');
-    } else
-        my_putchar(nb + '0');
-    return (0);
+    if (nbr < 0) {
+        my_putchar('-');
+        nbr = -nbr;
+    }
+    calc(nbr);
 }
