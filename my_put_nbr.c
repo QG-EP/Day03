@@ -5,25 +5,18 @@
 ** my_put_nbr
 */
 
-void my_putchar(char c);
-
-void calc(int nbr)
+int my_put_nbr(int nbr)
 {
-    if (nbr >= 10)
-        calc(nbr / 10);
-    if (nbr > 0)
-        my_putchar((nbr % 10) + 48);
-}
+    int x;
 
-void my_put_nbr(int nbr)
-{
-    if (nbr == 0) {
-        my_putchar('0');
-        return;
-    }
     if (nbr < 0) {
-        my_putchar('-');
         nbr = -nbr;
+        my_putchar('-');
     }
-    calc(nbr);
+    if (nbr > 9) {
+        my_put_nbr(nbr / 10);
+    }
+    x = nbr % 10 + 48;
+    my_putchar(x);
+    return (0);
 }
